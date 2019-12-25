@@ -1,0 +1,25 @@
+{
+  "name": "slack-clone",
+  "version": "1.0.0",
+  "description": "slack-clone-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naadir95/slack-clone.git"
+  },
+  "author": "Naadir Dawood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naadir95/slack-clone/issues"
+  },
+  "homepage": "https://github.com/naadir95/slack-clone#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "nodemon": "^2.0.2"
+  }
+}
