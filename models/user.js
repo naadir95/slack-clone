@@ -17,7 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         User.belongsToMany(models.Team,{
             through:'member',
             foreignKey: 'UserId'
-        })
+        });
+        User.belongsToMany(models.Channel,{
+            through:'channel_member',
+            foreignKey: 'UserId'
+        });
     };
   
     return User;
