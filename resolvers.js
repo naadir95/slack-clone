@@ -1,6 +1,7 @@
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 
+const bcrypt = require('bcrypt')
 
 const resolvers = {
 
@@ -13,8 +14,15 @@ const resolvers = {
         }
       },
     Mutation:{
-        createUser(parent, args, context){
-            return context.models.User.create(args)
+        register: async (parent, {password, ...otherArgs}, context) =>{
+            try{
+                const hashedPassword = await bcrypt.hash(password, 2);
+                await context.models.User.create({...otherArgs, password:hashedPassword});
+                return true;
+            }catch(err){
+                console.log(err);
+                return false;
+            }
         },
         createTeam: async (parent, args, {models, user}) => {
             try{

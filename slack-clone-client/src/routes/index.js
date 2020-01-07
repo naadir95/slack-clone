@@ -9,11 +9,17 @@ const Home = require('./Home')
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path ="/" exact component={Home}/>
-      </Switch>
-    </BrowserRouter>
+    <div>
+      <h1>
+        Home
+        <Nav/>
+      </h1>
+    </div>
+    // <BrowserRouter>
+    //   <Switch>
+    //     <Route path ="/" exact component={Home}/>
+    //   </Switch>
+    // </BrowserRouter>
   );
 }
 
